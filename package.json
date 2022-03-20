@@ -1,0 +1,38 @@
+{
+  "name": "@hexlet/code",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Compares two configuration files and shows a difference",
+  "main": "index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "npx jest --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/setov/frontend-project-lvl2.git"
+  },
+  "keywords": [
+    "hexlet",
+    "project"
+  ],
+  "author": "Sergey Titov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/setov/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/setov/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.2",
+    "jest": "^27.5.1"
+  }
+}
