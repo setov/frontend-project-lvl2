@@ -18,7 +18,7 @@ jobs:
     strategy:
       # Node versions list
       matrix:
-        node-version: [16.x]
+        node-version: [15.x]
 
     steps:
         # Check-out repository under GitHub workspace
@@ -45,5 +45,4 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
-          coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov
           debug: true
