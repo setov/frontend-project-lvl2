@@ -5,4 +5,4 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/413def6ffa2e14204f32/test_coverage)](https://codeclimate.com/github/setov/frontend-project-lvl2/test_coverage)
 
-
+[![Node CI](https://github.com/setov/frontend-project-lvl2/actions/workflows/nodejs.yml/badge.svg)](https://github.com/setov/frontend-project-lvl2/actions/workflows/nodejs.yml)
