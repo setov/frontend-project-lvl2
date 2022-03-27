@@ -3,39 +3,21 @@ import { readFile, buildPath } from '../src/fileUtils.js';
 
 const getFixturePath = (filename) => buildPath(['__fixtures__', filename]);
 
-const expectedData = { plain: [], complex: [] };
+const expectedData = { complex: [] };
+const formats = ['stylish'];
 
 beforeAll(() => {
-  const plainData = readFile([getFixturePath('expected_flat.txt')]);
   const complexData = readFile([getFixturePath('expected_complex.txt')]);
-  expectedData.plain = plainData.trim();
   expectedData.complex = complexData.trim();
 });
 
-test('plain object', () => {
-  const filePath1 = getFixturePath('flatFile1.json');
-  const filePath2 = getFixturePath('flatFile2.json');
-
-  const actual = gendiff(filePath1, filePath2);
-  const expected = expectedData.plain;
-  expect(actual).toEqual(expected);
-});
-
-test('complex object', () => {
+test('complex object json format', () => {
   const filePath1 = getFixturePath('complexFile1.json');
   const filePath2 = getFixturePath('complexFile2.json');
 
-  const actual = gendiff(filePath1, filePath2);
+  const [stylish] = formats;
+  const actual = gendiff(filePath1, filePath2, stylish);
   const expected = expectedData.complex;
-  expect(actual).toEqual(expected);
-});
-
-test('plain object yaml format', () => {
-  const filePath1 = getFixturePath('flatFile1.yaml');
-  const filePath2 = getFixturePath('flatFile2.yaml');
-
-  const actual = gendiff(filePath1, filePath2);
-  const expected = expectedData.plain;
   expect(actual).toEqual(expected);
 });
 
@@ -43,7 +25,8 @@ test('complex object yaml format', () => {
   const filePath1 = getFixturePath('complexFile1.yaml');
   const filePath2 = getFixturePath('complexFile2.yaml');
 
-  const actual = gendiff(filePath1, filePath2);
+  const [stylish] = formats;
+  const actual = gendiff(filePath1, filePath2, stylish);
   const expected = expectedData.complex;
   expect(actual).toEqual(expected);
 });
