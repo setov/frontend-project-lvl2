@@ -1,7 +1,7 @@
 import getAst from './src/genAst.js';
 import { readFile, getExtension } from './src/fileUtils.js';
 import parse from './src/parsers.js';
-import format from './src/formatters.js';
+import format from './src/formatters/index.js';
 
 export default (filePath1, filePath2, outputFormat) => {
   const data1 = parse(readFile([filePath1]), getExtension(filePath1));
