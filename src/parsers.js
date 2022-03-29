@@ -2,7 +2,7 @@ import yaml from 'js-yaml';
 
 const mapping = {
   json: JSON.parse,
-  yml: yaml.safeLoad,
+  yml: yaml.load,
   yaml: yaml.load,
 };
 
