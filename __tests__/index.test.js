@@ -36,7 +36,7 @@ test('complex object yaml format', () => {
   expect(actual).toEqual(expected);
 });
 
-test('complex object plain format', () => {
+test('complex object plain format output', () => {
   const filePath1 = getFixturePath('file1.json');
   const filePath2 = getFixturePath('file2.json');
 
@@ -53,5 +53,14 @@ test('complex object json format output', () => {
   const [,, json] = formats;
   const actual = gendiff(filePath1, filePath2, json);
   const expected = expectedData.json;
+  expect(actual).toEqual(expected);
+});
+
+test('complex object with default output format (stylish)', () => {
+  const filePath1 = getFixturePath('file1.json');
+  const filePath2 = getFixturePath('file2.json');
+
+  const actual = gendiff(filePath1, filePath2);
+  const expected = expectedData.stylish;
   expect(actual).toEqual(expected);
 });
