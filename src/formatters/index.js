@@ -8,4 +8,9 @@ const mapping = {
   json,
 };
 
-export default (ast, format) => (mapping[format](ast) ?? mapping[stylish](ast));
+const format = (ast, outputFormat) => {
+  const getFormat = mapping[outputFormat] ?? mapping[stylish];
+  return getFormat(ast);
+};
+
+export default format;
