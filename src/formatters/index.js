@@ -2,15 +2,15 @@ import stylish from './stylish.js';
 import plain from './plain.js';
 import json from './json.js';
 
-const mapping = {
-  stylish,
-  plain,
-  json,
+export default (data, format) => {
+  switch (format) {
+    case 'stylish':
+      return stylish(data);
+    case 'plain':
+      return plain(data);
+    case 'json':
+      return json(data);
+    default:
+      throw new Error(`Unexpected output format ${format}`);
+  }
 };
-
-const format = (ast, outputFormat) => {
-  const getFormat = mapping[outputFormat] ?? mapping[stylish];
-  return getFormat(ast);
-};
-
-export default format;
