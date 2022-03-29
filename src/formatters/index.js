@@ -8,4 +8,4 @@ const mapping = {
   json,
 };
 
-export default (ast, format) => mapping[format](ast) ?? mapping[stylish](ast);
+export default (ast, format) => (mapping[format](ast) ?? mapping[stylish](ast));
